@@ -6,3 +6,7 @@
 # Windows system files
 Thumbs.db
 Desktop.ini
+
+# Microsoft Excel temporary files
+~$*.xlsx
+~$*.xls

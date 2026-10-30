@@ -1,139 +1,156 @@
 # IT Delivery & BAU Operations Tracker
 
-**Jira Cloud · Confluence · Microsoft Excel**  
-**Personal portfolio project — simulated IT Operations and software-delivery coordination**
+**Jira Cloud · Confluence · Microsoft Excel · JQL · IT Operations Reporting**
 
-> All incidents, work items, risks, dates, and team interactions are **simulated for learning**. This project does not use real banking data and is not affiliated with or endorsed by HSBC or any bank.
+A hands-on **personal portfolio simulation** of technology delivery coordination and business-as-usual (BAU) IT operations. This project demonstrates how to organize work, maintain ticket quality, track operational blockers, and communicate status to stakeholders.
 
-## Overview
+> **Training project:** All work items, incidents, team interactions, deadlines, and operational scenarios are simulated. No real banking systems, confidential data, production changes, or security remediation activities were involved. This project is not affiliated with or endorsed by any bank.
 
-This project simulates how an IT delivery and BAU operations coordinator tracks work items, documents blockers, maintains ticket hygiene, and prepares stakeholder reporting in a controlled enterprise-technology environment.
+## Project Overview
 
-**Tools:** Jira Kanban, JQL and dashboards; Confluence playbooks and runbooks; Excel status and ageing reports.
+The simulated IT Operations team tracks **25 Jira work items** covering incident follow-up, security remediation coordination, release readiness, change management, monitoring, and documentation. Jira is the source of truth for work-item status; Confluence holds process documentation; Excel provides a date-specific reporting snapshot.
+
+### What I Built
+
+- **Jira Kanban workflow:** `To Do → In Progress → Blocked → Done`.
+- **Ticket hygiene:** reviewed ownership, priorities, due dates, stale labels, potential duplicates, and overdue work.
+- **JQL filters and dashboard:** status/priority charts and lists of blocked, overdue, unassigned, and simulated stale items.
+- **Blocker follow-ups:** documented dependencies, impacted work, responsible teams, next actions, and escalation conditions.
+- **Confluence knowledge base:** five published pages covering playbooks, operations checklists, incident escalation, and weekly reporting.
+- **Excel tracker and weekly report:** ticket-level data quality checks, deadline monitoring, KPI summaries, and stakeholder reporting.
 
 ## Verified Jira Snapshot — 30 October 2026
 
-| Metric | Value |
+| Metric | Count |
 |---|---:|
-| Total tickets | 25 |
+| Total work items | **25** |
 | To Do | 7 |
 | In Progress | 8 |
 | Blocked | 4 |
 | Done (simulated status) | 6 |
-| Open tickets | 19 |
-| Overdue open tickets (due date before report date) | 9 |
-| Actual stale tickets (not updated for 7+ days) | 0 |
-| Simulated stale labels | 3 |
-| Unassigned | 0 |
+| Open work items | **19** |
+| Overdue open work items | **9** |
+| Actual stale work items (7+ days without an update) | **0** |
+| Items labeled `stale-simulated` | 3 |
+| Unassigned items | 0 |
 
-**Evidence:** This snapshot was checked against an exported `Jira.csv` file. The public dataset in `data/` is sanitized and contains a limited field subset. These metrics are a snapshot, not a live Jira integration. Jira created and updated timestamps are from the export; some due dates intentionally precede ticket creation because this is a historical simulation. Status `Done` is a simulation state and must not be interpreted as verified production deployment or remediation.
+**Data interpretation:** Counts were reconciled against a Jira CSV export from the simulation. This is a **static snapshot**, not a live Jira integration. Some example due dates intentionally precede Jira creation dates to simulate historical overdue work. `Done` indicates the simulated Jira status, not verified production deployment, technical remediation, or independent approval. The `stale-simulated` label is for training and is not evidence of seven-day inactivity.
 
-## What I Built
+## Project Evidence
 
-### Jira — tracking and governance
+### 1. Jira Kanban Board
 
-- Team-managed Kanban board: **To Do → In Progress → Blocked → Done**.
-- 25 simulated BAU and IT delivery tasks, with priorities, assignees, descriptions, and deadlines.
-- JQL filters for overdue open work, blocked work, unassigned work, and simulated stale cases.
-- Jira dashboard with status and priority distributions, blocker lists, and overdue lists.
+![Jira Kanban board with four workflow columns](screenshots/jira-kanban-board.png)
 
-### Confluence — documentation
+### 2. Jira Operations Dashboard
 
-- IT Delivery & BAU Operations Knowledge Base (home page).
-- How We Work — Operations Playbook.
-- Daily BAU Operations Checklist.
-- Incident Response & Escalation Runbook.
-- Weekly IT Operations Status Report.
+![Jira dashboard with status and priority tracking](screenshots/jira-operations-dashboard.png)
 
-> Add exports of your **published** Confluence pages to `docs/` before claiming them as portfolio evidence. Do not upload private pages or internal data.
+### 3. Excel Reporting Dashboard
 
-### Excel — management reporting
+![Excel operations dashboard](screenshots/excel-dashboard.png)
 
-The workbook at `excel/IDBO_Day5_Validated_Jira_Tracker.xlsx` contains:
+**Additional screenshots:** [Confluence Knowledge Base](screenshots/confluence-knowledge-base.png) · [Incident Response Runbook](screenshots/confluence-incident-runbook.png)
 
-1. `START_HERE` — report date, definitions, and snapshot notes.
-2. `Jira_Tickets` — imported tickets, blocker follow-ups, and calculated quality flags.
-3. `Dashboard` — status KPIs, overdue metrics, and priority distribution.
-4. `Weekly_Report` — stakeholder-report template linked to the reporting data.
-5. `Portfolio_Guide` — publication checklist.
-6. `Audit_Findings` — data-quality review and recommended follow-ups.
+## Deliverables
 
-The workbook does **not** synchronize automatically with Jira; update it from a new Jira export for any future reporting period.
+### Confluence Documentation — 5 PDF Exports
 
-## Sample JQL
+- [Knowledge Base (Home Page)](docs/IDBO-IT%20Delivery%20%26%20BAU%20Operations%20Knowledge%20Base-301026-070236.pdf)
+- [How We Work — Operations Playbook](docs/IDBO-How%20We%20Work%20%E2%80%94%20Operations%20Playbook-301026-070332.pdf)
+- [Daily BAU Operations Checklist](docs/IDBO-Daily%20BAU%20Operations%20Checklist-301026-070322.pdf)
+- [Incident Response & Escalation Runbook](docs/IDBO-Incident%20Response%20%26%20Escalation%20Runbook-301026-070226.pdf)
+- [Weekly IT Operations Status Report](docs/IDBO-Weekly%20IT%20Operations%20Status%20Report-301026-070343.pdf)
 
-**Overdue open tickets**
+These are exports of the pages used in the training project. The runbooks describe **illustrative processes**, not real institutional policies or incident response commitments.
+
+### Excel Tracker and CSV Data
+
+- [Excel — IDBO Validated Jira Tracker](excel/IDBO_Day5_Validated_Jira_Tracker.xlsx): reporting settings, work item tracking, dashboard, weekly report, and data-quality audit.
+- [CSV — Anonymized Public Snapshot (25 tickets)](data/IDBO_Validated_Public_Snapshot.csv): a limited, sanitized subset of the Jira export prepared for this public portfolio.
+
+The Excel file does **not** sync automatically with Jira. A new Jira export and validation are required to update future reporting snapshots.
+
+## Example Jira Queries (JQL)
+
+**Overdue open work**
 
 ```jql
 project = IDBO AND statusCategory != Done AND due < startOfDay() ORDER BY due ASC
 ```
 
-**Blocked tickets**
+**Blocked work items**
 
 ```jql
 project = IDBO AND status = Blocked ORDER BY priority DESC
 ```
 
-**Actual stale tickets (7 days)**
+**Unassigned work items**
+
+```jql
+project = IDBO AND assignee IS EMPTY ORDER BY priority DESC
+```
+
+**Actually stale work items (7+ days without updates)**
 
 ```jql
 project = IDBO AND statusCategory != Done AND updated <= "-7d" ORDER BY updated ASC
 ```
 
-**Simulated stale tickets**
+**Simulated stale work items**
 
 ```jql
 project = IDBO AND labels = "stale-simulated" AND statusCategory != Done
 ```
 
-The simulated stale label **is not evidence** that a Jira work item has genuinely been inactive for seven days.
+The last two queries have different meanings: the former tests Jira's real update timestamp; the latter selects demo records tagged for a training exercise.
 
-## Example Blocker Coordination
+## Blocker Management Example
 
-The dashboard tracks four simulated blockers:
+| Jira issue | Simulated dependency | Coordination action |
+|---|---|---|
+| `IDBO-4` | API performance logs pending | Follow up with Infrastructure Team |
+| `IDBO-12` | UAT sign-off pending | Follow up with Business UAT Lead |
+| `IDBO-13` | Change-management details pending | Escalate deadline risk for review |
+| `IDBO-14` | Monitoring history pending | Request monitoring data and review findings |
 
-| Key | Example dependency |
-|---|---|
-| IDBO-4 | Pending API performance logs |
-| IDBO-12 | Pending mobile UAT sign-off |
-| IDBO-13 | Missing change-management details |
-| IDBO-14 | Pending monitoring alert history |
-
-For each blocker, the training procedure is to record the impact, responsible team, next action, follow-up date, and escalation condition.
-
-## Portfolio Screenshots
-
-**Add only real screenshots you captured of your completed project.** Suggested file names:
-
-- `screenshots/jira-kanban-board.png`
-- `screenshots/jira-operations-dashboard.png`
-- `screenshots/confluence-knowledge-base.png`
-- `screenshots/confluence-incident-runbook.png`
-- `screenshots/excel-dashboard.png`
-
-Before publication, crop browser tabs, email addresses, avatars, private URLs, and account-specific identifiers. Optional: insert the screenshots here using Markdown once they are uploaded.
+The coordination approach is to record the **blocker, impact, accountable team, next action, follow-up date, and escalation condition**. Tracking a dependency is not the same as resolving the underlying technical issue.
 
 ## Repository Structure
 
 ```text
 it-delivery-bau-operations-tracker/
 ├── README.md
+├── .gitignore
 ├── data/
 │   └── IDBO_Validated_Public_Snapshot.csv
 ├── excel/
 │   └── IDBO_Day5_Validated_Jira_Tracker.xlsx
-├── docs/                            # Add the 5 Confluence PDF exports here
-└── screenshots/                     # Add screenshots captured from your project here
+├── docs/
+│   └── 5 Confluence PDF exports
+└── screenshots/
+    ├── jira-kanban-board.png
+    ├── jira-operations-dashboard.png
+    ├── confluence-knowledge-base.png
+    ├── confluence-incident-runbook.png
+    └── excel-dashboard.png
 ```
 
-## Lessons Learned
+## Skills Demonstrated
 
-- Maintaining Jira issue quality, assignment, and lifecycle status.
-- Tracking blockers, due dates, and escalation follow-ups.
-- Building reporting views with JQL, saved filters, and Jira dashboard gadgets.
-- Linking work tracking to Confluence runbooks and playbooks.
-- Producing a consistent weekly operations report in Excel.
+**IT Delivery & Operations:** task coordination, BAU tracking, deadline monitoring, ownership, and blocker follow-up.  
+**Agile / Work Management:** Kanban workflow, Jira, JQL, issue hygiene, dashboards.  
+**Documentation:** Confluence pages, runbooks, operational checklists, and structured status updates.  
+**Reporting & Governance:** Excel KPI reporting, data quality, stakeholder communication, and escalation awareness.
+
+## Key Lessons Learned
+
+- Clear ticket ownership and acceptance criteria help keep operational work actionable.
+- A blocked item should have a documented next step and follow-up date, not simply a changed status.
+- Reported overdue and stale metrics require explicit definitions and a reporting cutoff.
+- A Jira dashboard and Excel snapshot serve different purposes: the former reflects current Jira data, while the latter captures a verified point in time.
+- Simulated training outcomes must be clearly distinguished from validated real-world operations.
 
 ---
-**Disclaimer:** Solely an educational / recruitment portfolio simulation. No real bank systems, risk approvals, vulnerability remediation, or production incidents were involved.
-# it-delivery-bau-operations-tracker
+
+**Disclaimer:** This repository is a personal learning and recruitment portfolio. It contains simulated workflows and anonymized sample data only. No real banking incidents, vulnerability scans, remediation activities, risk approvals, or production changes were performed.
